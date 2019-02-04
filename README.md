@@ -9,7 +9,7 @@ _Works with both old and new Google Spreadsheets._
 
 ## To Use
 
-You'll need [Node.js](http://www.nodejs.org) (and [NPM](http://www.npmjs.org/sheetdown), which in most cases comes bundled with Node.js). To get Node.js (for running JavaScript on servers (and in this case your computer is one)), go to [nodejs.org](http://www.nodejs.org) and click the icon that corresponds to your operating system. Install. When it's done, open Terminal (in Mac) or Command Prompt (Win) and proceed:
+You'll need [Node.js](http://www.nodejs.org) (and [NPM](http://www.npmjs.org/sheetdown), which in most cases comes bundled with Node.js). To get Node.js (for running JavaScript on servers (and in this case your computer is one)), go to [nodejs.org](http://www.nodejs.org) and click the icon that corresponds to your operating system. Install. When it's done, open Terminal (in Mac or Linux) or Command Prompt (Win) and proceed:
 
 ### Install sheetdown
 
@@ -31,7 +31,19 @@ sheetdown SPREADSHEETURL
 
 **Copies the output (and then you can paste it):**
 
+_On a Mac_
 ```bash
+sheetdown SPREADSHEETURL | pbcopy
+```
+
+_On Windows_
+```batch
+sheetdown SPREADSHEETURL | clip
+```
+
+_On Linux (requires the `xclip` package)_
+```bash
+alias pbcopy='xclip -i -sel clipboard'
 sheetdown SPREADSHEETURL | pbcopy
 ```
 
